@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^0.16.2",
+    "coin-hive": "^1.1.1",
+    "express": "^4.15.4",
+    "puppeteer": "^0.10.2"
+  }
+}

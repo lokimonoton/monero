@@ -1,0 +1,9 @@
+
+for (( ; ; ))
+do
+var=$((var+1))
+echo $var
+   node balance.js
+     echo "tunggu 20 detik"
+   sleep 20
+done
