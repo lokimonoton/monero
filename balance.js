@@ -10,14 +10,21 @@ var CoinHive = require('coin-hive');
   // Listen on events
   miner.on('found', () => console.log('Found!'))
   miner.on('accepted', () => console.log('Accepted!'))
-  miner.on('update', data => console.log(`
+  miner.on('update', data => {console.log(`
     Hashes per second: ${data.hashesPerSecond}
     Total hashes: ${data.totalHashes}
     Accepted hashes: ${data.acceptedHashes}
-  `));
+
+  `);
+  if(data.acceptedHashes==256){
+      miner.kill()
+    }
+
+  }
+  );
 
   // Stop miner
-  setTimeout(async () =>{ await miner.kill();
-  }
-  , 60000);
+  // setTimeout(async () =>{ await miner.kill();
+  // }
+  // , 60000);
 })();
